@@ -1,24 +1,20 @@
 package net.kusnadi.android_learn_fragment2;
 
-import android.app.Dialog;
-import android.content.DialogInterface;
+
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.MenuItem;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import net.kusnadi.android_learn_fragment2.helpers.BottomNavigationViewHelper;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView mTextMessage;
 
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -33,7 +29,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void displayFragment(int id){
         Fragment fragment = null;
-        Log.d("menu id","menu " + id);
+
         switch(id){
             case R.id.navigation_home :
                 fragment = new HomeFragment();
@@ -46,8 +42,7 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.navigation_exit :
                 Log.d("EXIT", "calling exit");
-                Toast.makeText(this, "Calling an Exit button", Toast.LENGTH_SHORT).show();
-                MainActivity.this.finish();
+                finish();
                 break;
         }
 
